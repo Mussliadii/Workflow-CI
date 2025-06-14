@@ -24,18 +24,18 @@ jobs:
         pip --version
 
     - name: Install dependencies
-      run: pip install -r MLProject/requirements.txt
+      run: pip install -r MLProjek/requirements.txt
 
     - name: Run MLflow project
       run: |
-        cd MLProject
+        cd MLProjek
         export MLFLOW_TRACKING_URI=file:./mlruns
         mlflow run . --env-manager=local
 
     - name: Get latest MLflow run_id
       id: get_run_id
       run: |
-        cd MLProject
+        cd MLProjek
         export MLFLOW_TRACKING_URI=file:./mlruns
 
         experiment_id=0
@@ -57,11 +57,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: mlartifacts
-        path: MLProject/mlruns/${{ env.experiment_id }}/${{ env.MLFLOW_RUN_ID }}/artifacts
+        path: MLProjek/mlruns/${{ env.experiment_id }}/${{ env.MLFLOW_RUN_ID }}/artifacts
 
     - name: Build Docker model
       run: |
-        cd MLProject
+        cd MLProjek
         export MLFLOW_TRACKING_URI=file:./mlruns
         mlflow models build-docker -m "runs:/${{ env.MLFLOW_RUN_ID }}/model" -n titanic-image
 

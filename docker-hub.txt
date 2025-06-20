@@ -1,1 +1,1 @@
-https://hub.docker.com/r/haldies/mlproject-image
+https://hub.docker.com/r/musliadii/mlproject-image

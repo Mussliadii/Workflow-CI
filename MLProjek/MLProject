@@ -1,5 +1,8 @@
 name: titanic-mlflow-project
+
 conda_env: conda.yaml
+
 entry_points:
   main:
-    command: "python modelling.py"
+    command: >
+      python modelling.py

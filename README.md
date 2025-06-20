@@ -1,3 +1,3 @@
 # Workflow-CI
 
-Ini adalah reposity untuk memenuhi kriteria 3
+Ini adalah repository  untuk memenuhi kriteria 3
